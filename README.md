@@ -2,6 +2,130 @@
 
 A comprehensive framework for designing and building intelligent, autonomous agents for your software ecosystem.
 
+```
+┌────────────────────────────────────────────────────────────────────────────┐
+│                        AGENT FRAMEWORK OVERVIEW                             │
+└────────────────────────────────────────────────────────────────────────────┘
+
+                          DECISION FRAMEWORK
+                                 │
+                    ┌────────────┴────────────┐
+                    │  Should You Build An    │
+                    │       Agent?            │
+                    └────────────┬────────────┘
+                                 │
+          ┌──────────────────────┼──────────────────────┐
+          │                      │                      │
+    ┌─────▼─────┐         ┌─────▼─────┐        ┌──────▼──────┐
+    │ COMPLEXITY│         │   VALUE   │        │ ERROR COST  │
+    │Exploratory│         │  > Cost   │        │  Tolerable  │
+    │  Unknown  │         │    ROI    │        │  Reversible │
+    │   Path    │         │  < 1mo    │        │             │
+    └─────┬─────┘         └─────┬─────┘        └──────┬──────┘
+          │                     │                      │
+          └──────────────────────┼──────────────────────┘
+                                 │ YES → BUILD AGENT
+                                 │ NO  → USE WORKFLOW
+                                 │
+                    ┌────────────▼────────────┐
+                    │  AGENT COMPOSITION      │
+                    │                         │
+                    │  ┌──────┐  ┌──────┐    │
+                    │  │MODEL │→ │TOOLS │    │
+                    │  │Brain │  │Hands │    │
+                    │  └───┬──┘  └──┬───┘    │
+                    │      │        │         │
+                    │      │  ┌─────▼──────┐ │
+                    │      │  │ENVIRONMENT │ │
+                    │      │  │   World    │ │
+                    │      │  └─────┬──────┘ │
+                    │      └────────┘         │
+                    │   (Feedback Loop)       │
+                    └────────────┬────────────┘
+                                 │
+                    ┌────────────▼────────────┐
+                    │   CORE AGENT LOOP       │
+                    └─────────────────────────┘
+                          │
+                    ┌─────▼──────┐
+                    │   GOAL     │  Define success criteria
+                    └─────┬──────┘
+                          ↓
+                    ┌─────────┐
+                    │  PLAN   │  Determine next action
+                    └─────┬───┘
+                          ↓
+                    ┌─────────┐
+                    │   ACT   │  Execute tools
+                    └─────┬───┘
+                          ↓
+                    ┌──────────┐
+                    │ OBSERVE  │  Collect feedback
+                    └─────┬────┘
+                          ↓
+                    ┌──────────┐
+                    │ REFLECT  │  Analyze outcome
+                    └─────┬────┘
+                          ↓
+                    ┌──────────────┐
+                    │ GOAL ACHIEVED│   YES → EXIT
+                    │  or MAX ITER?│   NO  → LOOP
+                    └──────────────┘
+
+
+    ┌──────────────────────────────────────────────────────────┐
+    │              EVOLUTION PATH                               │
+    ├──────────────────────────────────────────────────────────┤
+    │                                                           │
+    │  Level 2          Level 3           Level 4              │
+    │  REACTIVE    →    PROACTIVE    →    AUTONOMOUS           │
+    │                                                           │
+    │  if X then Y      Detect          Risk scoring           │
+    │  Simple rules     patterns        Autonomous             │
+    │  Fixed            Dynamic          actions               │
+    │  thresholds       thresholds       Learning              │
+    │                                                           │
+    │  Week 1-2         Week 3-4         Week 5-8              │
+    │  Ship fast        A/B test         Gradual rollout       │
+    │                                                           │
+    └──────────────────────────────────────────────────────────┘
+
+
+    ┌──────────────────────────────────────────────────────────┐
+    │              ARCHITECTURE PATTERNS                        │
+    ├──────────────────────────────────────────────────────────┤
+    │                                                           │
+    │  ┌────────────┐                  ┌─────────────┐        │
+    │  │   Your     │                  │  Central    │        │
+    │  │    App     │  ◄───────────►   │  Service    │        │
+    │  └────┬───────┘                  └──────┬──────┘        │
+    │       │                                  │               │
+    │  ┌────▼────────┐                  ┌─────▼──────┐       │
+    │  │  Agent SDK  │                  │Intelligence│       │
+    │  │  • Buffer   │                  │   Layer    │       │
+    │  │  • Cache    │                  │  • Risk    │       │
+    │  │  • Validate │                  │  • Behavior│       │
+    │  └─────────────┘                  └────────────┘       │
+    │                                                          │
+    │  HYBRID DEPLOYMENT = SDK + SERVICE                      │
+    │  • Local optimization (latency)                         │
+    │  • Central intelligence (learning)                      │
+    │  • Resilient (works offline)                            │
+    │                                                          │
+    └──────────────────────────────────────────────────────────┘
+
+                           REMEMBER
+
+  ✓ Identify WHEN agents make sense (not everything!)
+  ✓ Build SIMPLE, looping systems (Model + Tools + Environment)
+  ✓ Debug from THEIR point of view (limited context)
+  ✓ Scale with BUDGETS and care (harnesses, metrics)
+  ✓ Evolve INTENTIONALLY (Level 2 → 3 → 4, single → multi)
+
+```
+
+---
+
 ## What Is This Framework?
 
 This framework provides:
